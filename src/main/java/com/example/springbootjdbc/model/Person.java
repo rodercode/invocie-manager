@@ -1,4 +1,4 @@
 package com.example.springbootjdbc.model;
 
-public class Coworker {
+public class Person {
 }

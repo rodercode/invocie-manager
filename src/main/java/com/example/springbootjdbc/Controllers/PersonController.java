@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class CoworkerController {
+public class PersonController {
 
     @PostMapping("home")
     public String login(@RequestParam String username, @RequestParam String password){
