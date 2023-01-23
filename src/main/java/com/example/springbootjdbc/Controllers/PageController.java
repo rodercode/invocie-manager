@@ -2,29 +2,33 @@ package com.example.springbootjdbc.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageController {
 
     @GetMapping("/")
     public String switchToHomePage(){
+        return "redirect:home";
+    }
+    @GetMapping("home")
+    public String switchToHomePageTwo(){
         return "home";
     }
-    @GetMapping("edit-page")
+
+
+    @GetMapping("edit")
     public String switchToEditPage(){
-        return "edit-page";
+        return "edit";
     }
 
-    @GetMapping("invoice-page")
+    @GetMapping("invoice")
     public String switchToInvoicePage(){
-        return "invoice-page";
+        return "invoice";
     }
 
-    @GetMapping("payment-page")
+    @GetMapping("payment")
     public String switchToPaymentPage(){
-        return "payment-page";
+        return "payment";
     }
-
-
-
 }
