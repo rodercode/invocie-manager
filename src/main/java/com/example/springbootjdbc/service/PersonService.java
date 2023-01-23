@@ -19,7 +19,13 @@ public class PersonService {
         return "";
     }
 
-    
+    public void selectUserByPassword(String password){
+        if (personRepo.selectPersonByPassword(password) != null)
+            return personRepo.selectPersonByPassword(password).getPassword();
+        return "";
+    }
+
+
 
 
 
