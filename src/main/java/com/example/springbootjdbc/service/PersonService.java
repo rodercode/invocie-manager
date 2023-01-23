@@ -13,5 +13,17 @@ public class PersonService {
         this.personRepo = personRepo;
     }
 
+    public void selectUserByUsername(String username){
+        if (personRepo.selectPersonByUsername(username) != null)
+            return personRepo.selectPersonByUsername(username).getUsername();
+        return "";
+    }
+
     
+
+
+
+
+
+
 }
