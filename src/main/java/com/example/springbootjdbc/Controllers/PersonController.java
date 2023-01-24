@@ -40,9 +40,6 @@ public class PersonController {
 //        }
 
             if (username.equals("leif") && password.equals("stockholmärmitthjärta")) {
-                    session.setAttribute("username", username);
-                    session.setMaxInactiveInterval(10);
-                    System.out.println(session.getAttribute("username"));
                     return "redirect:invoice";
             }
             return "home";
