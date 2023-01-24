@@ -10,12 +10,12 @@ public class Invoice {
     private Date created_at;
     private String description;
     private String category;
-    private Double price;
+    private int price;
 
     public Invoice() {
     }
 
-    public Invoice(String title, String description, String category, Double price) {
+    public Invoice(String title, String description, String category, int price) {
         this.title = title;
         this.description = description;
         this.category = category;
@@ -54,11 +54,11 @@ public class Invoice {
         this.category = category;
     }
 
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
