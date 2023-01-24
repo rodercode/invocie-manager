@@ -1,6 +1,10 @@
 package com.example.springbootjdbc.Controllers;
 
+import ch.qos.logback.core.model.Model;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,14 +30,12 @@ public class PageController {
 
     @GetMapping("invoice")
     public String switchToInvoicePage(){
-//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-//        Date date = new Date();
-//        System.out.println(formatter.format(date));
         return "invoice";
     }
 
     @GetMapping("payment")
-    public String switchToPaymentPage(){
+    public String switchToPaymentPage(HttpSession session){
+        System.out.println(session.getAttribute("username"));
         return "payment";
     }
 }

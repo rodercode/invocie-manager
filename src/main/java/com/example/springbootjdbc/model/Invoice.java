@@ -2,24 +2,22 @@ package com.example.springbootjdbc.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Invoice {
     private String title;
+    private Date created_at;
     private String description;
-
     private String category;
-    private Double price;
-
+    private int price;
     public Invoice() {
     }
-
-    public Invoice(String title, String description, String category, Double price) {
+    public Invoice(String title, String description, String category, int price) {
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
     }
-
     public String getTitle() {
         return title;
     }
@@ -28,12 +26,12 @@ public class Invoice {
         this.title = title;
     }
 
-    public SimpleDateFormat getInvoiceTime() {
-        return invoiceTime;
+    public Date getCreated_at() {
+        return created_at;
     }
 
-    public void setInvoiceTime(SimpleDateFormat invoiceTime) {
-        this.invoiceTime = invoiceTime;
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
     }
 
     public String getDescription() {
@@ -52,11 +50,11 @@ public class Invoice {
         this.category = category;
     }
 
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -64,7 +62,7 @@ public class Invoice {
     public String toString() {
         return "Invoice{" +
                 "title='" + title + '\'' +
-                ", invoiceTime=" + invoiceTime +
+                ", created_at=" + created_at +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
                 ", price=" + price +
