@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class InvoiceService {
 
-    private final InvoiceRepo invoiceListRepo;
+    private final InvoiceRepo invoiceRepo;
     @Autowired
-    public InvoiceService(InvoiceRepo invoiceListRepo) {
-        this.invoiceListRepo = invoiceListRepo;
+    public InvoiceService(InvoiceRepo invoiceRepo) {
+        this.invoiceRepo = invoiceRepo;
     }
 
     public void addInvoice(Invoice invoice){
-
+        invoiceRepo.insert(invoice);
     }
 }
