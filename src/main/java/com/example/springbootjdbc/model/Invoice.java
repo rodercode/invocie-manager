@@ -3,6 +3,7 @@ package com.example.springbootjdbc.model;
 import java.text.DateFormat;
 
 public class Invoice {
+
     private String title;
     private DateFormat date;
     private String description;

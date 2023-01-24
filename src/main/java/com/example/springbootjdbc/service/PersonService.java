@@ -23,12 +23,4 @@ public class PersonService {
             return personRepo.selectPersonByPassword(password).getPassword();
         return "";
     }
-
-
-
-
-
-
-
-
 }

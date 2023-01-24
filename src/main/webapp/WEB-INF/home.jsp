@@ -11,6 +11,7 @@
     Passowrd: <input type="text" name="password">
     <br>
     <button>Log in</button>
+    <pre>${error}</pre>
 </form>
 </body>
 </html>

@@ -1,4 +1,6 @@
 package com.example.springbootjdbc.service;
 
-public class InvoiceService {
+public class InvoiceListService {
+
+
 }

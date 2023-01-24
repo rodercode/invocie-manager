@@ -17,7 +17,6 @@ public class PersonController {
     public PersonController(AuthService authService) {
         this.authService = authService;
     }
-
     @PostMapping("home")
     public String login(@RequestParam String username, @RequestParam String password, ModelMap model) {
         if (authService.checkIfValidLogin(username,password))
