@@ -16,7 +16,6 @@ public class PageController {
         return "home";
     }
 
-
     @GetMapping("edit")
     public String switchToEditPage(){
         return "edit";
