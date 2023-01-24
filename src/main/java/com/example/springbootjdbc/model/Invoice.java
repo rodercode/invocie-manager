@@ -5,18 +5,16 @@ import java.text.SimpleDateFormat;
 
 public class Invoice {
     private String title;
-
     private String description;
-    private SimpleDateFormat invoiceTime;
+
     private String category;
     private Double price;
 
     public Invoice() {
     }
 
-    public Invoice(String title, SimpleDateFormat invoiceTime, String description, String category, Double price) {
+    public Invoice(String title, String description, String category, Double price) {
         this.title = title;
-        this.invoiceTime = invoiceTime;
         this.description = description;
         this.category = category;
         this.price = price;

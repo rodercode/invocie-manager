@@ -22,9 +22,9 @@ public class InvoiceController {
     public String createInvoice(@RequestParam String title, @RequestParam String description,
                                 @RequestParam String category, @RequestParam double price) {
 
-        new Invoice(title, new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"), description,
+        new Invoice(title, description,
                 category, price);
-        personService.registerPerson(new Person(username,password));
+        invoiceService.addInvoice(new Invoice(title,description,category,price));
 
     }
 }
