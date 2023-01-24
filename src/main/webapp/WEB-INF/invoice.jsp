@@ -5,6 +5,8 @@
     <title>Invoice Page</title>
 </head>
 <body>
-
+<form action="payment" method="get">
+    <button>Create Invoice</button>
+</form>
 </body>
 </html>
