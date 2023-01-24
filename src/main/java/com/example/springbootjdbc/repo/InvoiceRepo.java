@@ -16,10 +16,8 @@ public class InvoiceRepo {
     }
 
     public void insert(Invoice invoice) {
-        jdbcTemplate.update("" +
-                        "INSERT INTO invoice(title,description, category, price) " +
-                        "VALUES (?,?,?,?)",
-                        invoice.getTitle(), invoice.getDescription(),
-                        invoice.getCategory(),invoice.getPrice());
+        jdbcTemplate.update("INSERT INTO invoice(title, created_at, description, category, price)VALUES (?,?,?,?,?)",
+                invoice.getTitle(),invoice.getCreated_at(), invoice.getDescription(),
+                invoice.getCategory(), invoice.getPrice());
     }
 }

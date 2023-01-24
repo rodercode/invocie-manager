@@ -2,11 +2,13 @@ package com.example.springbootjdbc.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Invoice {
     private String title;
-    private String description;
 
+    private Date created_at;
+    private String description;
     private String category;
     private Double price;
 
@@ -28,8 +30,13 @@ public class Invoice {
         this.title = title;
     }
 
+    public Date getCreated_at() {
+        return created_at;
+    }
 
-
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
+    }
 
     public String getDescription() {
         return description;
@@ -59,6 +66,7 @@ public class Invoice {
     public String toString() {
         return "Invoice{" +
                 "title='" + title + '\'' +
+                ", created_at=" + created_at +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
                 ", price=" + price +
