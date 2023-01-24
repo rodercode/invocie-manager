@@ -6,22 +6,18 @@ import java.util.Date;
 
 public class Invoice {
     private String title;
-
     private Date created_at;
     private String description;
     private String category;
     private int price;
-
     public Invoice() {
     }
-
     public Invoice(String title, String description, String category, int price) {
         this.title = title;
         this.description = description;
         this.category = category;
         this.price = price;
     }
-
     public String getTitle() {
         return title;
     }

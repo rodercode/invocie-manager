@@ -16,5 +16,9 @@
     <br>
     <button>Add Invoice</button>
 </form>
+
+<form action="invoice" method="get">
+    <button>Go Back</button>
+</form>
 </body>
 </html>
