@@ -13,6 +13,8 @@
     Category: <input type="text" name="category">
     <br>
     Price: <input type="text" name="price">
+    <br>
+    <button>Add Invoice</button>
 </form>
 </body>
 </html>
