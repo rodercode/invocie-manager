@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 @Controller
 public class InvoiceController {
     private final InvoiceService invoiceService;
+
     @Autowired
     public InvoiceController(InvoiceService invoiceService) {
         this.invoiceService = invoiceService;
@@ -21,10 +22,9 @@ public class InvoiceController {
     @PostMapping("payment")
     public String createInvoice(@RequestParam String title, @RequestParam String description,
                                 @RequestParam String category, @RequestParam double price) {
-
         new Invoice(title, description,
                 category, price);
-        invoiceService.addInvoice(new Invoice(title,description,category,price));
-
+        invoiceService.addInvoice(new Invoice(title, description, category, price));
+        return "payment";
     }
 }

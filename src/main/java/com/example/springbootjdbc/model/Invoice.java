@@ -28,13 +28,8 @@ public class Invoice {
         this.title = title;
     }
 
-    public SimpleDateFormat getInvoiceTime() {
-        return invoiceTime;
-    }
 
-    public void setInvoiceTime(SimpleDateFormat invoiceTime) {
-        this.invoiceTime = invoiceTime;
-    }
+
 
     public String getDescription() {
         return description;
@@ -64,7 +59,6 @@ public class Invoice {
     public String toString() {
         return "Invoice{" +
                 "title='" + title + '\'' +
-                ", invoiceTime=" + invoiceTime +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
                 ", price=" + price +
