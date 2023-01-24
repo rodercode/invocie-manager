@@ -2,6 +2,9 @@ package com.example.springbootjdbc.service;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.io.IOException;
 
 @Service
 public class UserSessionService {
@@ -10,6 +13,9 @@ public class UserSessionService {
         session.setAttribute("username", username);
         session.setMaxInactiveInterval(60 * 30);
         System.out.println(session.getAttribute("username"));
+    }
+    public void emptySession(HttpSession session) throws IOException {
+        session.invalidate();
     }
 
 
