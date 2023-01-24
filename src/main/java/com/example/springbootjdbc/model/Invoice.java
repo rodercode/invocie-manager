@@ -1,18 +1,20 @@
 package com.example.springbootjdbc.model;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class Invoice {
     private String title;
-    private DateFormat invoiceTime;
+
     private String description;
+    private SimpleDateFormat invoiceTime;
     private String category;
     private Double price;
 
     public Invoice() {
     }
 
-    public Invoice(String title, DateFormat invoiceTime, String description, String category, Double price) {
+    public Invoice(String title, SimpleDateFormat invoiceTime, String description, String category, Double price) {
         this.title = title;
         this.invoiceTime = invoiceTime;
         this.description = description;
@@ -28,11 +30,11 @@ public class Invoice {
         this.title = title;
     }
 
-    public DateFormat getInvoiceTime() {
+    public SimpleDateFormat getInvoiceTime() {
         return invoiceTime;
     }
 
-    public void setInvoiceTime(DateFormat invoiceTime) {
+    public void setInvoiceTime(SimpleDateFormat invoiceTime) {
         this.invoiceTime = invoiceTime;
     }
 
