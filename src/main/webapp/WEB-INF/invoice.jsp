@@ -8,5 +8,9 @@
 <form action="payment" method="get">
     <button>Create Invoice</button>
 </form>
+
+<form action="edit" method="get">
+    <button>Edit Your invoice</button>
+</form>
 </body>
 </html>
