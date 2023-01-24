@@ -1,6 +1,4 @@
-DROP TABLE IF EXISTS coworker;
-
-CREATE TABLE coworker (
+CREATE TABLE If NOT EXISTS coworker (
 id INT auto_increment PRIMARY KEY,
 username VARCHAR(255),
 password VARCHAR(255));
