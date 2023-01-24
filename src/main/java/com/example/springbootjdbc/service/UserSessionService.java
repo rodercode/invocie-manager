@@ -12,10 +12,10 @@ public class UserSessionService {
     public void createSession(HttpSession session,String username){
         session.setAttribute("username", username);
         session.setMaxInactiveInterval(60 * 30);
-        System.out.println(session.getAttribute("username"));
     }
     public void emptySession(HttpSession session) throws IOException {
         session.invalidate();
+        System.out.println(session.getAttribute("username"));
     }
 
 
