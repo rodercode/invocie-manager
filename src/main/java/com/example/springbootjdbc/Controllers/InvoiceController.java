@@ -22,7 +22,7 @@ public class InvoiceController {
 
     @GetMapping("invoice")
     public String switchToInvoicePage(HttpSession session, ModelMap model){
-        model.addAttribute(invoiceService.displayInvoices());
+        model.addAttribute("invoiceList",invoiceService.displayInvoices());
         return "invoice";
     }
     @PostMapping("payment")
