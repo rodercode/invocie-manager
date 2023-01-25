@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>Current Invoices</h2>
+<pre>${}</pre>
 
 <form action="payment" method="get">
     <button>Create Invoice</button>

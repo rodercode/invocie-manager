@@ -29,10 +29,7 @@ public class PageController {
         return "edit";
     }
 
-    @GetMapping("invoice")
-    public String switchToInvoicePage(HttpSession session){
-        return "invoice";
-    }
+
 
     @GetMapping("payment")
     public String switchToPaymentPage(HttpSession session){
