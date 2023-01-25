@@ -34,6 +34,7 @@ public class CoworkerController {
     public String login(HttpSession session, @RequestParam String username, @RequestParam String password, ModelMap model) throws IOException {
         if (authService.checkIfValidLogin(username, password)) {
             userSessionService.createSession(session, username);
+            System.out.println(session.getAttribute("username"));
             return "redirect:invoice";
         } else {
             model.put("error", "incorrect Username or Password");
