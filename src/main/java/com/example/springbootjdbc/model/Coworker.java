@@ -1,12 +1,12 @@
 package com.example.springbootjdbc.model;
-public class Person {
+public class Coworker {
     private String username;
     private String password;
 
-    public Person() {
+    public Coworker() {
     }
 
-    public Person(String username, String password) {
+    public Coworker(String username, String password) {
         this.username = username;
         this.password = password;
     }

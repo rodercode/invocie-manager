@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Invoice {
+    private String owner;
     private String title;
     private Date created_at;
     private String description;
@@ -18,6 +19,15 @@ public class Invoice {
         this.category = category;
         this.price = price;
     }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -61,7 +71,8 @@ public class Invoice {
     @Override
     public String toString() {
         return "Invoice{" +
-                "title='" + title + '\'' +
+                "owner='" + owner + '\'' +
+                ", title='" + title + '\'' +
                 ", created_at=" + created_at +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
