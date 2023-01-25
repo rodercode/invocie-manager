@@ -37,7 +37,7 @@ public class CoworkerController {
             System.out.println(session.getAttribute("username"));
             return "redirect:invoice";
         } else {
-            model.put("error", "incorrect Username or Password");
+            model.addAttribute("error", "incorrect Username or Password");
             return "home";
         }
     }

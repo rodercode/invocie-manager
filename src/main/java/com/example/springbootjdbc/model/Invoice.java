@@ -63,12 +63,10 @@ public class Invoice {
 
     @Override
     public String toString() {
-        return "Invoice{" +
-                "id_coworker='" + id_coworker + '\'' +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                '}';
+        return
+                " title: " + title +
+                " description: " + description +
+                " category: " + category +
+                " price: " + price;
     }
 }

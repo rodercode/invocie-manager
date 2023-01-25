@@ -5,6 +5,8 @@ import com.example.springbootjdbc.repo.InvoiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InvoiceService {
 
@@ -16,5 +18,9 @@ public class InvoiceService {
 
     public void addInvoice(Invoice invoice){
         invoiceRepo.insert(invoice);
+    }
+
+    public List<Invoice> displayInvoices(){
+        return invoiceRepo.findAll();
     }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Page</title>
+</head>
+<body>
+<h2>Current Invoices</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Created_at</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="invoice:${invoiceList}">
+                <td th:text="${invoice.title}"></td>
+        </tr>
+
+    </tbody>
+</table>
+
+<form action="payment" method="get">
+    <button>Create Invoice</button>
+</form>
+
+<form action="edit" method="get">
+    <button>Edit Your invoice</button>
+</form>
+</body>
+</html>
