@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthService {
 
-    private final PersonService personService;
+    private final CoworkerService personService;
     @Autowired
-    public AuthService(PersonService personService) {
+    public AuthService(CoworkerService personService) {
         this.personService = personService;
     }
 

@@ -15,7 +15,6 @@ public class UserSessionService {
     }
     public void emptySession(HttpSession session) throws IOException {
         session.invalidate();
-        System.out.println(session.getAttribute("username"));
     }
 
 

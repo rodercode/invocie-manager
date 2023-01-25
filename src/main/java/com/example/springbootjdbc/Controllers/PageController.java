@@ -1,6 +1,7 @@
 package com.example.springbootjdbc.Controllers;
 
 import ch.qos.logback.core.model.Model;
+import com.example.springbootjdbc.model.Invoice;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,7 @@ public class PageController {
     }
 
     @GetMapping("invoice")
-    public String switchToInvoicePage(){
+    public String switchToInvoicePage(HttpSession session){
         return "invoice";
     }
 

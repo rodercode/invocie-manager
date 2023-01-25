@@ -1,12 +1,17 @@
 DROP TABLE IF EXISTS coworker;
 
 CREATE TABLE coworker (
-id INT auto_increment PRIMARY KEY,
-username VARCHAR(255),
-password VARCHAR(255));
+username VARCHAR(55) PRIMARY KEY,
+password VARCHAR(55)
+);
 
 INSERT INTO coworker(username, password)
 VALUES
     ("leif","stockholmärmitthjärta"),
     ("lisa", "glenfrångöteborg"),
-    ("johan", "kaffeärbäst");
+    ("johan", "kaffeärbäst"),
+    ("marcus", "norrlandärguld");
+
+
+
+
