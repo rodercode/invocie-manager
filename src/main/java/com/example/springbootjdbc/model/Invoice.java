@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Invoice {
 
+
     private int id;
     private String id_coworker;
     private String title;
@@ -28,6 +29,8 @@ public class Invoice {
     public int getId() {
         return id;
     }
+
+
 
     public void setId(int id) {
         this.id = id;

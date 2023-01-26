@@ -28,4 +28,8 @@ public class InvoiceService {
     public void deleteInvoice(int id){
         invoiceRepo.deleteInvoice(id);
     }
+
+    public Invoice findById(int id){
+        return invoiceRepo.selectById(id);
+    }
 }

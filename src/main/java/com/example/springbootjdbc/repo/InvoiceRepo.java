@@ -36,6 +36,15 @@ public class InvoiceRepo {
         jdbcTemplate.update("DELETE FROM invoice WHERE id = ?", id);
     }
 
+    public Invoice selectById(int id){
+        try {
+            return jdbcTemplate.queryForObject("SELECT * FROM invoice WHERE id=?",
+                    new BeanPropertyRowMapper<>(Invoice.class),id);
+        }catch (EmptyResultDataAccessException e){
+            return null;
+        }
+    }
+
 
 //
 }

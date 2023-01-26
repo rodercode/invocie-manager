@@ -16,29 +16,29 @@ import java.util.Date;
 
 @Controller
 public class PageController {
-    @GetMapping("/")
-    public String switchToHomePage(){
-        return "redirect:home";
-    }
+//    @GetMapping("/")
+//    public String switchToHomePage(){
+//        return "redirect:home";
+//    }
     @GetMapping("home")
     public String switchToHomePageTwo(){
         return "home";
     }
-
-    @GetMapping("edit")
-    public String switchToEditPage(){
-        return "edit";
-    }
-
-//    @GetMapping("edit*")
-//    public String test(){
-//        return "edit";
-//    }
-
 
     @GetMapping("payment")
     public String switchToPaymentPage(HttpSession session){
         System.out.println(session.getAttribute("username"));
         return "payment";
     }
+
+
+    @GetMapping("edit/delete*")
+    public String switchToDeletePage(){
+        return "edit";
+    }
+
+//    @GetMapping("edit/update*")
+//    public String test(){
+//        return "edit";
+//    }
 }

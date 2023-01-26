@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Avengers</title>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Power Source</th>
+    </tr>
+    <tr th:each = "avenger : ${avengerList}">
+        <td th:text="${avenger.name}">Thor</td>
+        <td th:text="${avenger.age}">1500</td>
+        <td th:text="${avenger.powerSource}">Deity</td>
+    </tr>
+</table>
+<p><a href="/addPage">Add an Avenger</a></p>
+</body>
+</html>
