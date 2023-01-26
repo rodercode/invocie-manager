@@ -1,5 +1,6 @@
 package com.example.springbootjdbc.Controllers;
 
+import com.example.springbootjdbc.model.Coworker;
 import com.example.springbootjdbc.model.Invoice;
 import com.example.springbootjdbc.service.InvoiceService;
 import com.example.springbootjdbc.service.UserSessionService;
@@ -22,12 +23,13 @@ public class InvoiceController {
 
     @GetMapping("invoice")
     public String switchToInvoicePage(HttpSession session, ModelMap model){
-        model.addAttribute("invoiceList",invoiceService.displayInvoices());
+        model.addAttribute("invoiceList",invoiceService.displayInvoices((String) session.getAttribute("username")));
         return "invoice";
     }
     @PostMapping("payment")
     public String createInvoice(HttpSession session,@RequestParam String title, @RequestParam String description,
                                 @RequestParam String category, @RequestParam int price) {
+
         invoiceService.addInvoice(new Invoice((String) session.getAttribute("username"),title, description, category,price));
         return "payment";
     }
