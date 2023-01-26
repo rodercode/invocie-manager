@@ -16,10 +16,10 @@ import java.util.Date;
 
 @Controller
 public class PageController {
-    @GetMapping("/")
-    public String switchToHomePage(){
-        return "redirect:home";
-    }
+//    @GetMapping("/")
+//    public String switchToHomePage(){
+//        return "redirect:home";
+//    }
     @GetMapping("home")
     public String switchToHomePageTwo(){
         return "home";
@@ -31,11 +31,7 @@ public class PageController {
         return "payment";
     }
 
-    @GetMapping("edit/update*")
-    public String switchToUpdatePage(ModelMap model,@RequestParam String title){
-        model.put("title",title);
-        return "edit";
-    }
+
     @GetMapping("edit/delete*")
     public String switchToDeletePage(){
         return "edit";

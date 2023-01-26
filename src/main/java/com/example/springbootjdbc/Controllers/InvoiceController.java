@@ -34,9 +34,16 @@ public class InvoiceController {
         return "redirect:/invoice";
     }
 
-    @PostMapping("edit/update")
-    public String showUpdatePage(@RequestParam int id, ModelMap model){
-        invoiceService.findById(id);
+    @GetMapping("edit")
+    public String switchToUpdatePage(ModelMap model){
+        Invoice invoice = invoiceService.findById(21);
+        model.addAttribute("invoice",invoice);
         return "edit";
     }
+
+//    @PostMapping("edit")
+//    public String showUpdatePage(ModelMap model){
+//        model.addAttribute("invoice",invoiceService.findById(21));
+//        return "edit";
+//    }
 }

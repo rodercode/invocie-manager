@@ -29,7 +29,6 @@
                 <td th:text="${invoice.category}"></td>
                 <td th:text="${invoice.price}"></td>
                 <td th:text="${invoice.createdAt}"></td>
-
                 <td>
                     <form method="post" th:action="'edit/delete?id=' + ${invoice.id}">
                         <button>Delete</button>
@@ -37,9 +36,13 @@
                 </td>
 
                 <td>
-                    <form method="post" th:action="'edit/update?id=' + ${invoice.id}">
+                    <form  method="get" th:action="'edit'">
                         <button>Update</button>
                     </form>
+
+<!--                    <form  method="post" th:action="'edit/update?id=' + ${invoice.id}">-->
+<!--                        <button>Update</button>-->
+<!--                    </form>-->
                 </td>
             </tr>
         </tbody>
