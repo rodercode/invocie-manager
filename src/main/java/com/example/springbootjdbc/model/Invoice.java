@@ -1,7 +1,7 @@
 package com.example.springbootjdbc.model;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.awt.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Invoice {
@@ -10,12 +10,14 @@ public class Invoice {
     private String description;
     private String category;
     private int price;
+    private LocalDate createdAt;
+    private Button delete;
     public Invoice() {
     }
 
-    public Invoice(String id_coworker, String title, String description, String category, int price) {
+    public Invoice(String id_coworker, String theTitle, String description, String category, int price) {
         this.id_coworker = id_coworker;
-        this.title = title;
+        this.title = theTitle;
         this.description = description;
         this.category = category;
         this.price = price;
@@ -59,6 +61,22 @@ public class Invoice {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public Button getDelete() {
+        return delete;
+    }
+
+    public void setDelete(Button delete) {
+        this.delete = delete;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
     }
 
     @Override

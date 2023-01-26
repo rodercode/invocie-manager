@@ -1,5 +1,6 @@
 package com.example.springbootjdbc.service;
 
+import com.example.springbootjdbc.model.Coworker;
 import com.example.springbootjdbc.model.Invoice;
 import com.example.springbootjdbc.repo.InvoiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class InvoiceService {
         invoiceRepo.insert(invoice);
     }
 
-    public List<Invoice> displayInvoices(){
-        return invoiceRepo.findAll();
+    public List<Invoice> displayInvoices(String username){
+        return invoiceRepo.findAll(username);
     }
 }
