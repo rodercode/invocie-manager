@@ -29,13 +29,6 @@ public class PageController {
     public String switchToEditPage(){
         return "edit";
     }
-
-//    @GetMapping("edit*")
-//    public String test(){
-//        return "edit";
-//    }
-
-
     @GetMapping("payment")
     public String switchToPaymentPage(HttpSession session){
         System.out.println(session.getAttribute("username"));
