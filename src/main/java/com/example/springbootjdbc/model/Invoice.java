@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Invoice {
+
+    private int id;
     private String id_coworker;
     private String title;
     private String description;
@@ -21,6 +23,14 @@ public class Invoice {
         this.description = description;
         this.category = category;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
