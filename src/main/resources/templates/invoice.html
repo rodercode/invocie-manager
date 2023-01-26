@@ -31,13 +31,13 @@
                 <td th:text="${invoice.createdAt}"></td>
 
                 <td>
-                    <form method="post" th:action="'edit?id=' + ${invoice.id}">
-                        <button type="submit" name="submit">Delete</button>
+                    <form method="post" th:action="'edit/delete?id=' + ${invoice.id}">
+                        <button>Delete</button>
                     </form>
                 </td>
 
                 <td>
-                    <form>
+                    <form method="post" th:action="'edit/update?id=' + ${invoice.id}">
                         <button>Update</button>
                     </form>
                 </td>

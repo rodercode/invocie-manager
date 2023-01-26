@@ -1,9 +1,6 @@
 package com.example.springbootjdbc.Controllers;
-
-import com.example.springbootjdbc.model.Coworker;
 import com.example.springbootjdbc.model.Invoice;
 import com.example.springbootjdbc.service.InvoiceService;
-import com.example.springbootjdbc.service.UserSessionService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,9 +27,16 @@ public class InvoiceController {
         invoiceService.addInvoice(invoice);
         return "payment";
     }
-    @PostMapping("edit*")
-    public String test2(@RequestParam int id){
+
+    @PostMapping("edit/delete*")
+    public String deleteInvoice(@RequestParam int id){
         invoiceService.deleteInvoice(id);
-        return "redirect:invoice";
+        return "redirect:/invoice";
+    }
+
+    @PostMapping("edit/update")
+    public String showUpdatePage(@RequestParam int id, ModelMap model){
+        invoiceService.findById(id);
+        return "edit";
     }
 }

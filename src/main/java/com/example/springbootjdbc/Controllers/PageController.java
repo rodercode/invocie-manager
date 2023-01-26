@@ -25,13 +25,24 @@ public class PageController {
         return "home";
     }
 
-    @GetMapping("edit")
-    public String switchToEditPage(){
-        return "edit";
-    }
     @GetMapping("payment")
     public String switchToPaymentPage(HttpSession session){
         System.out.println(session.getAttribute("username"));
         return "payment";
     }
+
+    @GetMapping("edit/update*")
+    public String switchToUpdatePage(ModelMap model,@RequestParam String title){
+        model.put("title",title);
+        return "edit";
+    }
+    @GetMapping("edit/delete*")
+    public String switchToDeletePage(){
+        return "edit";
+    }
+
+//    @GetMapping("edit/update*")
+//    public String test(){
+//        return "edit";
+//    }
 }
