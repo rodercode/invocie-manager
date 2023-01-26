@@ -28,16 +28,14 @@ public class InvoiceRepo {
                 invoice.getId_coworker(), invoice.getTitle(), invoice.getDescription(), invoice.getCategory(), invoice.getPrice());
     }
 
-        public List<Invoice> findAll (String username) {
-            return jdbcTemplate.query("SELECT title, description, category, price, created_at FROM invoice WHERE id_coworker = ?", new BeanPropertyRowMapper<>(Invoice.class),username);
-        }
-
-        public Coworker selectPersonByPassword (String password){
-            try {
-                return jdbcTemplate.queryForObject("SELECT password FROM coworker WHERE password=?",
-                        new BeanPropertyRowMapper<>(Coworker.class), password);
-            } catch (EmptyResultDataAccessException e) {
-                return null;
-            }
-        }
+    public List<Invoice> findAll(String username) {
+        return jdbcTemplate.query("SELECT id, title, description, category, price, created_at FROM invoice WHERE id_coworker = ?", new BeanPropertyRowMapper<>(Invoice.class), username);
     }
+
+    public void deleteInvoice(int id){
+        jdbcTemplate.update("DELETE FROM invoice WHERE id = ?", id);
+    }
+
+
+//
+}

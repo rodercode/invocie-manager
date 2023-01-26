@@ -24,4 +24,8 @@ public class InvoiceService {
     public List<Invoice> displayInvoices(String username){
         return invoiceRepo.findAll(username);
     }
+
+    public void deleteInvoice(int id){
+        invoiceRepo.deleteInvoice(id);
+    }
 }

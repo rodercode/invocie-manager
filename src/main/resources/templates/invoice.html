@@ -10,6 +10,7 @@
 <table>
     <thead>
         <tr>
+            <th>id</th>
             <th>Title</th>
             <th>Description</th>
             <th>Category</th>
@@ -22,6 +23,7 @@
     </thead>
     <tbody>
         <tr th:each="invoice:${invoiceList}">
+                <td th:text="${invoice.id}"></td>
                 <td th:text="${invoice.title}"></td>
                 <td th:text="${invoice.description}"></td>
                 <td th:text="${invoice.category}"></td>
@@ -29,15 +31,44 @@
                 <td th:text="${invoice.createdAt}"></td>
 
                 <td>
-                    <button>Delete</button>
+                    <form method="post" th:action="'edit?id=' + ${invoice.id}">
+                        <button type="submit" name="submit">Delete</button>
+                    </form>
                 </td>
-                <td>
-                    <button>Update</button>
-                </td>
-        </tr>
 
-    </tbody>
-</table>
+                <td>
+                    <form>
+                        <button>Update</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<!--
+
+
+<a th:href="'edit'" th:method="POST">Delete</a>-->
+<!--                    <button th:href="'edit'" th:method="Post">Delete</button>-->
+<!--                    <input th:method="POST">Delete</input>-->
+<!--                    <a th:href="@{'/edit?id=' + ${invoice.id}}" th:method="Get">Delete</a>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <form action="payment" method="get">
     <button>Create Invoice</button>
