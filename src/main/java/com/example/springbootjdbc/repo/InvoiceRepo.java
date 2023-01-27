@@ -44,6 +44,10 @@ public class InvoiceRepo {
             return null;
         }
     }
+    public void update(Invoice invoice, int id) {
+        jdbcTemplate.update("UPDATE invoice SET title=?, description=?, category=?, price=? WHERE id=?",
+                invoice.getTitle(), invoice.getDescription(), invoice.getCategory(), invoice.getPrice(),id);
+    }
 
 
 //
