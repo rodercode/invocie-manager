@@ -2,7 +2,9 @@ package com.example.springbootjdbc.Controllers;
 
 import ch.qos.logback.core.model.Model;
 import com.example.springbootjdbc.model.Invoice;
+import com.example.springbootjdbc.service.InvoiceService;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,6 +18,7 @@ import java.util.Date;
 
 @Controller
 public class PageController {
+
 //    @GetMapping("/")
 //    public String switchToHomePage(){
 //        return "redirect:home";
@@ -31,6 +34,10 @@ public class PageController {
         return "payment";
     }
 
+    @GetMapping("edit/update*")
+    public String switchToUpdatePage(){
+        return "edit";
+    }
 
     @GetMapping("edit/delete*")
     public String switchToDeletePage(){

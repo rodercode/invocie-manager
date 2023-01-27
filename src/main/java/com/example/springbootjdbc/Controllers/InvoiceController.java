@@ -28,29 +28,33 @@ public class InvoiceController {
         return "payment";
     }
 
+    @PostMapping("invoice")
+    public String updateInvoice(){
+        return "redirect:/invoice";
+    }
+    
     @PostMapping("edit/delete*")
     public String deleteInvoice(@RequestParam int id){
         invoiceService.deleteInvoice(id);
         return "invoice";
     }
 
-    @PostMapping("edit/update*")
+    @RequestMapping("edit/update")
     public String test(@RequestParam int id, ModelMap model){
         Invoice invoice = invoiceService.findById(id);
         model.addAttribute("invoice",invoice);
         return "edit";
     }
 
-//    @GetMapping("edit")
-//    public String switchToUpdatePage(ModelMap model){
-//        Invoice invoice = invoiceService.findById(21);
-//        model.addAttribute("invoice",invoice);
-//        return "edit";
+//    @PostMapping("edit/update*")
+//    public String updateInvoice(){
+//        return "redirect:/invoice";
 //    }
 
-//    @PostMapping("edit")
-//    public String showUpdatePage(ModelMap model){
-//        model.addAttribute("invoice",invoiceService.findById(21));
+//    @PostMapping("edit/update*")
+//    public String test(@RequestParam int id, ModelMap model){
+//        Invoice invoice = invoiceService.findById(id);
+//        model.addAttribute("invoice",invoice);
 //        return "edit";
 //    }
 }
