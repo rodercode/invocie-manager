@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form method="post" th:action="'/invoice'" th:object="${invoice}">
+<form method="post" th:object="${invoice}">
     title: <input type="text" th:field="*{title}"/>
     <br>
     Description: <input type="text" th:field="*{description}"/>

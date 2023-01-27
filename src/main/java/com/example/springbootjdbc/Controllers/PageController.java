@@ -34,10 +34,10 @@ public class PageController {
         return "payment";
     }
 
-    @GetMapping("edit/update*")
-    public String switchToUpdatePage(){
-        return "edit";
-    }
+//    @GetMapping("edit/update*")
+//    public String switchToUpdatePage(){
+//        return "edit";
+//    }
 
     @GetMapping("edit/delete*")
     public String switchToDeletePage(){

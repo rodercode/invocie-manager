@@ -29,18 +29,25 @@ public class InvoiceController {
     }
 
     @PostMapping("invoice")
-    public String updateInvoice(){
+    public String updateInvoice(ModelMap model){
         return "redirect:/invoice";
     }
     
     @PostMapping("edit/delete*")
     public String deleteInvoice(@RequestParam int id){
         invoiceService.deleteInvoice(id);
-        return "invoice";
+        return "redirect:/invoice";
     }
 
-    @RequestMapping("edit/update")
-    public String test(@RequestParam int id, ModelMap model){
+    @PostMapping("edit/update/id{id}")
+    public String updateInvoice(HttpSession session,@ModelAttribute Invoice invoice,@PathVariable("id") int id){
+        invoice.setId_coworker((String) session.getAttribute("username"));
+        invoiceService.updateInvoice(invoice,id);
+        return "redirect:/invoice";
+    }
+
+    @GetMapping("edit/update/id{id}")
+    public String switchToEditPage(ModelMap model,@PathVariable("id") int id){
         Invoice invoice = invoiceService.findById(id);
         model.addAttribute("invoice",invoice);
         return "edit";
