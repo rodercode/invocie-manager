@@ -1,48 +1,46 @@
 package com.example.springbootjdbc.Controllers;
-
-import ch.qos.logback.core.model.Model;
 import com.example.springbootjdbc.model.Invoice;
 import com.example.springbootjdbc.service.InvoiceService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PageController {
 
-//    @GetMapping("/")
-//    public String switchToHomePage(){
-//        return "redirect:home";
-//    }
+    private final InvoiceService invoiceService;
+    @Autowired
+    public PageController(InvoiceService invoiceService) {
+        this.invoiceService = invoiceService;
+    }
+    @GetMapping("/")
+    public String switchToHomePage(){
+        return "redirect:home";
+    }
     @GetMapping("home")
     public String switchToHomePageTwo(){
         return "home";
     }
-
+    @GetMapping("invoice")
+    public String switchToInvoicePage(HttpSession session, ModelMap model){
+        model.addAttribute("invoiceList",
+        invoiceService.displayInvoices((String) session.getAttribute("username")));
+        return "invoice";
+    }
     @GetMapping("payment")
     public String switchToPaymentPage(HttpSession session){
-        System.out.println(session.getAttribute("username"));
         return "payment";
     }
-
-//    @GetMapping("edit/update*")
-//    public String switchToUpdatePage(){
-//        return "edit";
-//    }
-
+    @GetMapping("edit/update/id{id}")
+    public String switchToEditPage(ModelMap model,@PathVariable("id") int id){
+        Invoice invoice = invoiceService.findById(id);
+        model.addAttribute("invoice",invoice);
+        return "edit";
+    }
     @GetMapping("edit/delete*")
     public String switchToDeletePage(){
         return "edit";
     }
-
-
 }
