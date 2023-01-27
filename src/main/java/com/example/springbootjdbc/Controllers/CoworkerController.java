@@ -17,15 +17,12 @@ import java.io.IOException;
 public class CoworkerController {
     private final AuthService authService;
     private final UserSessionService userSessionService;
-    private final CoworkerService coworkerService;
-@Autowired
-    public CoworkerController(AuthService authService, UserSessionService userSessionService, CoworkerService coworkerService) {
+    @Autowired
+    public CoworkerController(AuthService authService, UserSessionService userSessionService) {
         this.authService = authService;
         this.userSessionService = userSessionService;
-        this.coworkerService = coworkerService;
     }
-
-
+    
     @PostMapping("home")
     public String login(HttpSession session, @RequestParam String username, @RequestParam String password, ModelMap model) throws IOException {
 
