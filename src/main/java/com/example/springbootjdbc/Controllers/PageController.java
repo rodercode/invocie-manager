@@ -37,8 +37,5 @@ public class PageController {
         return "edit";
     }
 
-//    @GetMapping("edit/update*")
-//    public String test(){
-//        return "edit";
-//    }
+
 }

@@ -36,7 +36,7 @@
                 </td>
 
                 <td>
-                    <form  method="get" th:action="'edit'">
+                    <form  method="post" th:action="'edit/update?id=' + ${invoice.id}">
                         <button>Update</button>
                     </form>
 
