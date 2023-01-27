@@ -22,7 +22,6 @@ public class CoworkerController {
         this.authService = authService;
         this.userSessionService = userSessionService;
     }
-    
     @PostMapping("home")
     public String login(HttpSession session, @RequestParam String username, @RequestParam String password, ModelMap model) throws IOException {
 
@@ -38,7 +37,6 @@ public class CoworkerController {
             return "home";
         }
     }
-
     @GetMapping("edit")
     public String logout(HttpSession session) throws IOException {
         userSessionService.emptySession(session);
