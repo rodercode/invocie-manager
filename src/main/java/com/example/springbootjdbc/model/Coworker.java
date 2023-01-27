@@ -5,7 +5,6 @@ public class Coworker {
 
     public Coworker() {
     }
-
     public Coworker(String username, String password) {
         this.username = username;
         this.password = password;

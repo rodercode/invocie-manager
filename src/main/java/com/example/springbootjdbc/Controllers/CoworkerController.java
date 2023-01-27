@@ -1,6 +1,7 @@
 package com.example.springbootjdbc.Controllers;
 import com.example.springbootjdbc.model.Invoice;
 import com.example.springbootjdbc.service.AuthService;
+import com.example.springbootjdbc.service.CoworkerService;
 import com.example.springbootjdbc.service.UserSessionService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +17,26 @@ import java.io.IOException;
 public class CoworkerController {
     private final AuthService authService;
     private final UserSessionService userSessionService;
-    @Autowired
-    public CoworkerController(AuthService authService, UserSessionService userSessionService) {
+    private final CoworkerService coworkerService;
+@Autowired
+    public CoworkerController(AuthService authService, UserSessionService userSessionService, CoworkerService coworkerService) {
         this.authService = authService;
         this.userSessionService = userSessionService;
+        this.coworkerService = coworkerService;
     }
+
+
     @PostMapping("home")
     public String login(HttpSession session, @RequestParam String username, @RequestParam String password, ModelMap model) throws IOException {
-        if (authService.checkIfValidLogin(username, password)) {
+
+        if (username.equals("") || password.equals("") ) {
+            model.addAttribute("error", "incorrect Username or Password");
+            return "home";
+        }
+        else if (authService.checkIfValidLogin(username, password)) {
             userSessionService.createSession(session, username);
             return "redirect:invoice";
-        } else {
+        }else {
             model.addAttribute("error", "incorrect Username or Password");
             return "home";
         }
