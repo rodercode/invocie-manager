@@ -32,4 +32,8 @@ public class InvoiceService {
     public Invoice findById(int id){
         return invoiceRepo.selectById(id);
     }
+
+    public void updateInvoice(Invoice invoice, int id){
+        invoiceRepo.update(invoice,id);
+    }
 }
