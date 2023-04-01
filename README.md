@@ -1,7 +1,7 @@
 # Invocie Manager MVC Applcation
 An application allows the user to log in to a session. The user can also perform crud operations like create, read, update and delete invoices. All the changes are saved in a MySql database.
 
-![My Image](my-image.jpg)
+![My Image](invoice.png)
  
 # What I have learned
 * MySQL Database
