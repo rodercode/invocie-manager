@@ -1,2 +1,2 @@
-# invocie-manager MVC Applcation
+# Invocie-manager MVC Applcation
 
