@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthService {
-
     private final CoworkerService personService;
     @Autowired
     public AuthService(CoworkerService personService) {
@@ -17,6 +16,4 @@ public class AuthService {
         boolean isPasswordValid = personService.selectUserByPassword(password).equals(password);
         return isUsernameValid && isPasswordValid;
     }
-
-
 }

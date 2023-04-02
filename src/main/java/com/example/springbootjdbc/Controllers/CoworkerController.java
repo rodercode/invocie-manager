@@ -1,14 +1,11 @@
 package com.example.springbootjdbc.Controllers;
-import com.example.springbootjdbc.model.Invoice;
 import com.example.springbootjdbc.service.AuthService;
-import com.example.springbootjdbc.service.CoworkerService;
 import com.example.springbootjdbc.service.UserSessionService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.io.IOException;

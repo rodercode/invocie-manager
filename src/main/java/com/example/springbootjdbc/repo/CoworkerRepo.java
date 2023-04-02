@@ -25,7 +25,6 @@ public class CoworkerRepo {
             return null;
         }
     }
-
     public Coworker selectPersonByPassword(String password){
         try {
             return jdbcTemplate.queryForObject("SELECT password FROM coworker WHERE password=?",

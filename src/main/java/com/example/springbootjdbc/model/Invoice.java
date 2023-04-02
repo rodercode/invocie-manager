@@ -1,12 +1,7 @@
 package com.example.springbootjdbc.model;
-
 import java.awt.*;
 import java.time.LocalDate;
-import java.util.Date;
-
 public class Invoice {
-
-
     private int id;
     private String id_coworker;
     private String title;

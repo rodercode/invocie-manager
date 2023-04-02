@@ -16,7 +16,6 @@ public class CoworkerService {
             return personRepo.selectPersonByUsername(username).getUsername();
         return "";
     }
-
     public String selectUserByPassword(String password){
         if (personRepo.selectPersonByPassword(password) != null)
             return personRepo.selectPersonByPassword(password).getPassword();

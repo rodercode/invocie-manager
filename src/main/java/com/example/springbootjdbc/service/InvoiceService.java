@@ -10,7 +10,6 @@ import java.util.List;
 
 @Service
 public class InvoiceService {
-
     private final InvoiceRepo invoiceRepo;
     @Autowired
     public InvoiceService(InvoiceRepo invoiceRepo) {
