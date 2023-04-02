@@ -8,8 +8,8 @@ An application allows the user to log in to a session. The user can also perform
 - Use JDBC to store, add and remove data
 - Creating Crud operations: Create, Read, Update and Delete 
 - Using html and thymeleaf to designe webpages
-- Use of model, repo, service and controller
-- Use of sessions in Spring
+- Use of Get mapping and Post mapping
+- Use of sessions
 
 # How to use this app
 * Open your terminal and enter: git clone https://github.com/rodercode/invocie-manager.git
