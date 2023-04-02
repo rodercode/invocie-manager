@@ -18,18 +18,18 @@ created_at date
 
 INSERT INTO coworker(username, password)
 VALUES
-("leif","stockholmärmitthjärta"),
-("lisa", "glenfrångöteborg"),
-("johan", "kaffeärbäst"),
-("marcus", "norrlandärguld");
+("leif","1234"),
+("lisa", "5678"),
+("johan", "asdf"),
+("marcus", "zxcv");
 
 
 INSERT INTO invoice(id_coworker,title, description, category, price,created_at)
 VALUES
-("marcus","mat", "LunchMöte", "Möte",60,now()),
-("lisa","övertid", "jobbat över 3 timmar", "övertid",300,now()),
-("leif","resa", "från göteborg till luleå", "resersättning",100,now()),
-("johan","sjuk", "skada i armen", "sjukersättning",500,now());
+("marcus","food", "lunch meeting", "work",60,now()),
+("lisa","over time", "over time 3 hours", "work",300,now()),
+("leif","travel", "from gothenburg to luleå", "travel expenses",100,now()),
+("johan","report ill", "broken arm", "sickness benefit",500,now());
 
 
 
