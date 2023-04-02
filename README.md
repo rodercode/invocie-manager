@@ -19,6 +19,7 @@ An application allows the user to log in to a session. The user can also perform
 
 # Useful information
 - Programming Language: Java
+- Backend framework: Spring
 - Database: MySQL
 - You might need to install MySql: https://dev.mysql.com/downloads/installer/
 - Username and Password for every user will you find in data.sql fil
